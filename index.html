@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Sharing Platform</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Upload a Photo</h1>
@@ -11,25 +12,5 @@
         <input type="file" id="fileInput" name="file" />
         <button type="submit">Upload</button>
     </form>
-    <script>
-        document.getElementById('uploadForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const fileInput = document.getElementById('fileInput');
-            const formData = new FormData();
-            formData.append('file', fileInput.files[0]);
-
-            const response = await fetch('https://FunctionPhotoApp.azurewebsites.net/api/UploadMedia?code=m9WF-GjlGm4u-h1dXuVNhRTC9Wm6IEyMknZKTgPcJ_WyAzFuydftsg==', {
-                method: 'POST',
-                body: formData
-            });
-
-            if (response.ok) {
-                alert('File uploaded successfully!');
-            } else {
-                const errorText = await response.text();
-                alert('File upload failed: ' + errorText);
-            }
-        });
-    </script>
 </body>
 </html>
