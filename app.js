@@ -21,4 +21,3 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
         alert('File upload failed: ' + error.message);
     }
 });
-
