@@ -19,7 +19,7 @@
             formData.append('file', fileInput.files[0]);
 
             try {
-                const response = await fetch('https://<FunctionAppName>.azurewebsites.net/api/UploadMedia?code=<FunctionKey>', {
+                const response = await fetch('https://functionshareapp.azurewebsites.net', {
                     method: 'POST',
                     body: formData
                 });
